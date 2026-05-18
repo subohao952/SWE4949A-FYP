@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enterprise Agentic Automation</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Enterprise Agentic Automation</h1>
+    <p class="subtitle">UPM FYP MVP - Orchestrator + Schedule, Marketing & Document Agents</p>
+
+    <section class="card">
+      <label for="prompt">Business Request</label>
+      <textarea id="prompt" rows="5" placeholder="Example: We have a new product launch next Friday. Schedule a team meeting for Tuesday at 2pm, draft an announcement email, and create 3 tweet drafts."></textarea>
+      <button id="runBtn">Run Workflow</button>
+      <p id="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>Execution Result</h2>
+
+      <h3>Schedule Plan</h3>
+      <div id="scheduleResult" class="result-block">No run yet.</div>
+
+      <h3>Marketing Drafts</h3>
+      <div id="marketingResult" class="result-block">No run yet.</div>
+
+      <h3>Document Output</h3>
+      <div id="documentResult" class="result-block">No run yet.</div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
