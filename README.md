@@ -39,24 +39,6 @@ The system is orchestrated by an Orchestrator Agent (Openclaw or LangChain-style
 4. Open browser:
    - [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-## Evaluation Features
-
-- Every workflow run is saved into local SQLite database: `app_data.db`
-- Metrics summary API: `GET /api/metrics/summary`
-- HITL queue API: `GET /api/hitl/pending`
-- HITL review API: `POST /api/hitl/review`
-- CSV export API: `GET /api/metrics/export.csv`
-- Batch experiment API: `POST /api/experiments/run`
-- Preset list API: `GET /api/experiments/presets`
-- Run preset API: `POST /api/experiments/run-preset`
-- Auto report API: `POST /api/reports/generate`
-- Built-in web dashboard supports:
-  - Run workflow
-  - Refresh metrics
-  - Download CSV for thesis analysis
-  - Run multiple prompts in one batch experiment
-  - One-click A/B/C preset experiment scenarios
-  - One-click generate experiment report for thesis chapter
 
 ## Optional Real LLM Setup (OpenAI)
 
@@ -88,24 +70,4 @@ This project supports a fully local and free LLM mode with Ollama.
    - `python -m uvicorn app.main:app --reload`
 
 If local Ollama is unavailable, the system safely falls back to mock text generation.
-
-## Schedule Tool Provider Switch
-
-- Default mode is mock scheduler.
-- To show "real integration architecture" in demo:
-  - Set env var `SCHEDULE_PROVIDER=google`
-  - System will route schedule calls to the Google integration placeholder in `app/services/schedule_tool.py`
-  - You can implement real OAuth/API calls in that method later without changing the agent/orchestrator flow
-
-## Core Deliverables (Aligned with Lecturer Expectations)
-
-1. Core system prototype (3+ connected agents in one workflow).
-2. Agentic framework implementation with custom tool bindings.
-3. Academic thesis with performance, latency, cost, and success-rate analysis.
-
-## Suggested Next Steps
-
-1. Run the web UI and test a multi-agent business request end-to-end.
-2. Finalize tool integrations (calendar, social platform, document export).
-3. Collect workflow metrics from `app_data.db` for thesis evaluation.
 
